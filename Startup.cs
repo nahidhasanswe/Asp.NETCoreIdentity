@@ -19,9 +19,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Newtonsoft.Json.Serialization;
 
 
 using AuthApp.Models;
+using AuthApp.Repository;
+using AuthApp.Interface;
 
 namespace AuthApp
 {
@@ -38,8 +41,11 @@ namespace AuthApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
-            services.AddDbContext<GroceryListContext>(opt => 
-                opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            
+            // services.AddDbContext<GroceryListContext>(opt => 
+            //     opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            
             services.AddEntityFrameworkInMemoryDatabase()
               .AddDbContext<UserDbContext>(opt => 
                opt.UseSqlite(Configuration.GetConnectionString("Account")));
@@ -85,14 +91,20 @@ namespace AuthApp
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
+                    builder => builder.WithOrigins("http://localhost:4200")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowAnyOrigin()
                     .AllowCredentials());
             }); 
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(opt =>  
+            {  
+                if (opt.SerializerSettings.ContractResolver != null)  
+                {  
+                var resolver = opt.SerializerSettings.ContractResolver as DefaultContractResolver;  
+                resolver.NamingStrategy = null;  
+                }  
+            });  
         }
 
         private bool CustomLifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken tokenToValidate, TokenValidationParameters @param)
@@ -111,6 +123,9 @@ namespace AuthApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("CorsPolicy");
+
             app.UseStaticFiles();
             app.UseAuthentication();
 

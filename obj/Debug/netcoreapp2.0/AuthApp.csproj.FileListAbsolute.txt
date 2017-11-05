@@ -8,3 +8,13 @@ C:\Ionic\AuthApp\obj\Debug\netcoreapp2.0\AuthApp.AssemblyInfoInputs.cache
 C:\Ionic\AuthApp\obj\Debug\netcoreapp2.0\AuthApp.AssemblyInfo.cs
 C:\Ionic\AuthApp\obj\Debug\netcoreapp2.0\AuthApp.dll
 C:\Ionic\AuthApp\obj\Debug\netcoreapp2.0\AuthApp.pdb
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\bin\Debug\netcoreapp2.0\AuthApp.deps.json
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\bin\Debug\netcoreapp2.0\AuthApp.runtimeconfig.json
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\bin\Debug\netcoreapp2.0\AuthApp.runtimeconfig.dev.json
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\bin\Debug\netcoreapp2.0\AuthApp.dll
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\bin\Debug\netcoreapp2.0\AuthApp.pdb
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\obj\Debug\netcoreapp2.0\AuthApp.csproj.CoreCompileInputs.cache
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\obj\Debug\netcoreapp2.0\AuthApp.AssemblyInfoInputs.cache
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\obj\Debug\netcoreapp2.0\AuthApp.AssemblyInfo.cs
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\obj\Debug\netcoreapp2.0\AuthApp.dll
+C:\Users\Nahid Hasan\Desktop\Asp.NETCoreIdentity\obj\Debug\netcoreapp2.0\AuthApp.pdb
